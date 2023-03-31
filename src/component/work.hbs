@@ -1,0 +1,7 @@
+            <div>
+              {{#if company.url}}
+                 {{> link text=company.name href=company.url blank=true noLine=true}}
+              {{else}}
+                 <b>{{company.name}}</b>
+              {{/if}}
+            </div>
