@@ -23,25 +23,55 @@
   </ul>
   <br />
   <h3>Work Experience:</h3>
+  {{#each person.workExperience}}
+  <h3>{{this.company}}</h3>
+  <p>{{this.title}}, {{this.startDate}} - {{this.endDate}}</p>
   <ul>
-    {{#each person.workExperience}}
+    {{#each this.responsibilities}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <p>Year Founded: {{this.year_founded}}</p>
+  <p>Industry: {{this.industry}}</p>
+  <h4>Employees:</h4>
+  <ul>
+    {{#each this.employees}}
       <li>
-        <p><strong>{{this.title}}</strong>
-          at
-          {{this.company}}
-          ({{this.startDate}}
-          -
-          {{this.endDate}})</p>
+        {{this.name}}, {{this.position}} - {{this.department}}
         <ul>
-          {{#each this.responsibilities}}
-            <li>{{this}}</li>
+          {{#each this.projects}}
+            <li>
+              {{this.name}} - {{this.description}} ({{this.status}})
+              <ul>
+                {{#each this.teams}}
+                  <li>{{this.team_name}} - {{this.team_leader.name}} ({{this.team_leader.title}})</li>
+                  <ul>
+                    {{#each this.team_members}}
+                      <li>{{this.name}} - {{this.title}}</li>
+                      <ul>
+                        {{#each this.projects}}
+                          <li>{{this.name}} - {{this.description}}</li>
+                          <ul>
+                            {{#each this.technologies}}
+                              <li>{{this}}</li>
+                            {{/each}}
+                            <li>Team Members:</li>
+                            <ul>
+                              {{#each this.team_members}}
+                                <li>{{this.name}} - {{this.title}}</li>
+                              {{/each}}
+                            </ul>
+                          </ul>
+                        {{/each}}
+                      </ul>
+                    {{/each}}
+                  </ul>
+                {{/each}}
+              </ul>
+            </li>
           {{/each}}
         </ul>
-        <p><em>{{this.employees.length}}
-            employees in
-            {{this.industry}}, founded in
-            {{this.year_founded}}</em></p>
       </li>
     {{/each}}
   </ul>
-</div>
+{{/each}}
