@@ -1,0 +1,57 @@
+<div>
+<h1>{{make}} {{model}}</h1>
+<p>Year: {{year}}</p>
+<p>Color: {{color}}</p>
+
+<h2>Features</h2>
+<ul>
+  <li>Interior</li>
+  <ul>
+    <li>Seats</li>
+    <ul>
+      <li>Material: {{features.interior.seats.material}}</li>
+      <li>Color: {{features.interior.seats.color}}</li>
+      <li>Heated: {{#if features.interior.seats.heated}}Yes{{else}}No{{/if}}</li>
+      <li>Ventilated: {{#if features.interior.seats.ventilated}}Yes{{else}}No{{/if}}</li>
+    </ul>
+    <li>Dashboard</li>
+    <ul>
+      <li>Material: {{features.interior.dashboard.material}}</li>
+      <li>Color: {{features.interior.dashboard.color}}</li>
+      <li>Display</li>
+      <ul>
+        <li>Type: {{features.interior.dashboard.display.type}}</li>
+        <li>Size: {{features.interior.dashboard.display.size}} inches</li>
+        <li>Resolution: {{features.interior.dashboard.display.resolution}}</li>
+        <li>Touchscreen: {{#if features.interior.dashboard.display.touchscreen}}Yes{{else}}No{{/if}}</li>
+      </ul>
+    </ul>
+    <li>Audio</li>
+    <ul>
+      <li>System: {{features.interior.audio.system}}</li>
+      <li>Speakers: {{features.interior.audio.speakers}}</li>
+      <li>Subwoofer: {{#if features.interior.audio.subwoofer}}Yes{{else}}No{{/if}}</li>
+      <li>Bluetooth: {{#if features.interior.audio.bluetooth}}Yes{{else}}No{{/if}}</li>
+      <li>USB: {{#if features.interior.audio.USB}}Yes{{else}}No{{/if}}</li>
+    </ul>
+  </ul>
+  <li>Exterior</li>
+  <ul>
+    <li>Wheels</li>
+    <ul>
+      <li>Size: {{features.exterior.wheels.size}} inches</li>
+      <li>Type: {{features.exterior.wheels.type}}</li>
+      <li>Color: {{features.exterior.wheels.color}}</li>
+    </ul>
+    <li>Headlights</li>
+    <ul>
+      <li>Type: {{features.exterior.headlights.type}}</li>
+      <li>Brightness: {{features.exterior.headlights.brightness}}</li>
+      <li>Automatic: {{#if features.exterior.headlights.automatic}}Yes{{else}}No{{/if}}</li>
+    </ul>
+    <li>Sunroof</li>
+    <ul>
+      <li>Type: {{features.exterior.sunroof.type}}</li>
+      <li>Size: {{features.exterior.sunroof.size}}</li>
+      <li>Automatic: {{engine.transmission.type}}</li>
+</div>
