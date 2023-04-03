@@ -1,0 +1,90 @@
+<div style='margin: 30px'>
+  <h1>{{name}}</h1>
+  <p>{{description}}</p>
+  <h2>Price: ${{price}}</h2>
+  <h2>Category: {{category}}</h2>
+  <h2>Features:</h2>
+  <ul>
+    <li>Processor:</li>
+    <ul>
+      <li>Brand: {{features.processor.brand}}</li>
+      <li>Model: {{features.processor.model}}</li>
+      <li>Speed: {{features.processor.speed}}</li>
+      <li>Cores: {{features.processor.cores}}</li>
+      <li>Cache: {{features.processor.cache}}</li>
+    </ul>
+    <li>Memory:</li>
+    <ul>
+      <li>Type: {{features.memory.type}}</li>
+      <li>Size: {{features.memory.size}}</li>
+      <li>Speed: {{features.memory.speed}}</li>
+    </ul>
+    <li>Storage:</li>
+    <ul>
+      <li class='badge text-bg-warning'>Type:
+        {{features.storage.type}}</li>
+      <li class='badge text-bg-warning'>Size:
+        {{features.storage.size}}</li>
+    </ul>
+    <li>Display:</li>
+    <ul>
+      <li>Size: {{features.display.size}}</li>
+      <li>Resolution: {{features.display.resolution}}</li>
+      <li>Technology: {{features.display.technology}}</li>
+      <li>Color Space: {{features.display.color_space}}</li>
+      <li>Brightness: {{features.display.brightness}}</li>
+      <li>Refresh Rate:
+        {{features.display.refresh_rate}}</li>
+    </ul>
+    <li>Graphics:</li>
+    <ul>
+      <li class='badge text-bg-primary'>Brand:
+        {{features.graphics.brand}}</li>
+      <li class='badge text-bg-primary'>Model:
+        {{features.graphics.model}}</li>
+      <li class='badge text-bg-primary'>Memory:
+        {{features.graphics.memory}}</li>
+    </ul>
+    <li>Ports:</li>
+    <ul>
+      {{#each features.ports}}
+        <li>Type: {{this.type}}</li>
+        <li>Count: {{this.count}}</li>
+        {{#if this.features}}
+          <li>Features:</li>
+          <ul>
+            {{#each this.features}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      {{/each}}
+    </ul>
+    <li>Battery:</li>
+    <ul>
+      <li class='badge text-bg-success'>Type:
+        {{features.battery.type}}</li>
+      <li class='badge text-bg-success'>Capacity:
+        {{features.battery.capacity}}</li>
+      <li class='badge text-bg-success'>Life:
+        {{features.battery.life}}</li>
+    </ul>
+    <li>Weight: {{features.weight}}</li>
+    <li>Dimensions:</li>
+    <ul>
+      <li class='badge text-bg-success'>Height:
+        {{features.dimensions.height}}</li>
+      <li class='badge text-bg-success'>Width:
+        {{features.dimensions.width}}</li>
+      <li class='badge text-bg-success'>Depth:
+        {{features.dimensions.depth}}</li>
+    </ul>
+    <li>Operating System: {{features.operating_system}}</li>
+    <li>Accessories:</li>
+    <ul>
+      {{#each features.accessories}}
+        <li>Name: {{this.name}}, Price: ${{this.price}}</li>
+      {{/each}}
+    </ul>
+  </ul>
+</div>
