@@ -1,0 +1,83 @@
+<div style='margin: 30px'>
+  <h1>{{name}}</h1>
+  <p>{{description}}</p>
+
+  <h2>History</h2>
+  <ul>
+    <li>Year: {{history.year}}</li>
+    <li>Founder: {{history.founder}}</li>
+  </ul>
+
+  <h2>Types</h2>
+  <ul>
+    {{#each types}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h2>Syntax</h2>
+  <h3>Variables</h3>
+  <ul>
+    {{#each syntax.variables}}
+      <li class='badge text-bg-primary'>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h3>Functions</h3>
+  <ul>
+    {{#each syntax.functions}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h3>Conditionals</h3>
+  <ul>
+    {{#each syntax.conditionals}}
+      <li class='badge text-bg-primary'>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h3>Loops</h3>
+  <ul>
+    {{#each syntax.loops}}
+      <li class='badge text-bg-secondary'>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h3>Classes</h3>
+  <ul>
+    {{#each syntax.classes}}
+      <li class='badge text-bg-secondary'>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h2>Features</h2>
+  <ul>
+    {{#each features}}
+      <li class='badge text-bg-secondary'>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h2>Libraries</h2>
+  <ul>
+    {{#each libraries}}
+      <li class='badge text-bg-secondary'>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h2>Tools</h2>
+  <ul>
+    {{#each tools}}
+      <li class='badge text-bg-danger'>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h2>Community</h2>
+  <ul class='breadcrumb'>
+    {{#each community}}
+      <li class='breadcrumb-item active'>{{this.name}}
+        ({{this.type}})</li>
+    {{/each}}
+  </ul>
+
+</div>
