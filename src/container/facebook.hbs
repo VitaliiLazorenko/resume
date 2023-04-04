@@ -2,48 +2,80 @@
   <h1>{{name}}</h1>
   <h2>Users:</h2>
   <ul>
-    {{#each users}}
-      <li>
-        ID:{{this.id}}
-        {{this.name}}
-        ({{this.gender}},
-        {{this.age}})
+    {{#each this.users}}
+      ID:{{this.id}}
+      {{this.name}}
+      ({{this.gender}},
+      {{this.age}})
+      <ul>
+        <li
+          class='alert alert-dark'
+          role='alert'
+        >Friends:</li>
         <ul>
-          <li>Friends:</li>
-          <ul>
-            {{#each this.friends}}
-              <li>
-                ID:{{this.id}}
-                {{this.name}}
-                ({{this.gender}},
-                {{this.age}})
+          {{#each this.friends}}
+            <li>
+              ID:{{this.id}}
+              {{this.name}}
+              ({{this.gender}},
+              {{this.age}})
+              <ul>
+                <li>Mutual friends:</li>
                 <ul>
-                  <li>Mutual friends:</li>
-                  <ul>
-                    {{#each this.mutual_friends}}
-                      <li>
-                        ID:{{this.id}}
-                        {{this.name}}
-                        ({{this.gender}},
-                        {{this.age}})
-                        <ul>
-                          {{#each this.mutual_friends}}
-                            <li>
-                              ID:{{this.id}}
-                              {{this.name}}
-                              ({{this.gender}},
-                              {{this.age}})
-                            </li>
-                          {{/each}}
-                        </ul>
-                      </li>
-                    {{/each}}
-                  </ul>
+                  {{#each this.mutual_friends}}
+                    <li>
+                      ID:{{this.id}}
+                      {{this.name}}
+                      ({{this.gender}},
+                      {{this.age}})
+                      <ul>
+                        {{#each this.mutual_friends}}
+                          <li>
+                            ID:{{this.id}}
+                            {{this.name}}
+                            ({{this.gender}},
+                            {{this.age}})
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </li>
+                  {{/each}}
                 </ul>
-              </li>
-            {{/each}}
-          </ul>
-          <li>Groups:</li>
+              </ul>
+            </li>
+            {{#if this.groups}}
+              <li
+                class='alert alert-dark'
+                role='alert'
+              >Groups:</li>
+              <ul>
+                {{#each this.groups}}
+                  <li>
+                    ID:{{this.id}}
+                    {{this.name}}
+                    -
+                    {{this.description}}
+                    <ul>
+                      {{#each this.members}}
+                        <li>
+                          ID:{{this.id}}
+                          {{this.name}}
+                          ({{this.gender}},
+                          {{this.age}})
+                        </li>
+                      {{/each}}
+                    </ul>
+                  </li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          {{/each}}
+        </ul>
+        {{#if this.groups}}
+          <li
+            class='alert alert-dark'
+            role='alert'
+          >Groups:</li>
           <ul>
             {{#each this.groups}}
               <li>
@@ -64,8 +96,8 @@
               </li>
             {{/each}}
           </ul>
-        </ul>
-      </li>
+        {{/if}}
+      </ul>
     {{/each}}
   </ul>
 </div>
