@@ -1710,7 +1710,7 @@ router.get('/shophome', function (req, res) {
         },
         {
           text: 'Library',
-          link: 'https://www.youtube.com/feed/library',
+
         },
       ],
       [
@@ -1728,7 +1728,7 @@ router.get('/shophome', function (req, res) {
         },
         {
           text: 'Settings',
-          link: 'https://www.youtube.com/account',
+
         },
       ],
       [
@@ -1746,7 +1746,7 @@ router.get('/shophome', function (req, res) {
         },
         {
           text: 'Gaming',
-          link: 'https://www.youtube.com/gaming',
+
         },
       ],
       [
@@ -1764,7 +1764,7 @@ router.get('/shophome', function (req, res) {
         },
         {
           text: 'Learning',
-          link: 'https://www.youtube.com/learning',
+
         },
       ],
       [
@@ -1782,7 +1782,7 @@ router.get('/shophome', function (req, res) {
         },
         {
           text: 'About',
-          link: 'https://www.youtube.com/about/',
+       
         },
       ],
     ],
