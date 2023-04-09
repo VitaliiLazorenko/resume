@@ -1,0 +1,19 @@
+<section>
+    <div class='card'>
+        <div class='card-body'>
+            <div class='nav'>
+                <h2>Logo</h2>
+                    <ul class="me-auto mb-2 mb-lg-0"></ul>
+                        {{#each navigation.links}}
+                        <li class="nav-item">
+                            <a class='nav-link active' aria-current="page" href='{{this.href}}'>{{this.text}}</a></li>
+                        {{/each}}
+                    <li class="nav-item">
+                       <a class="nav-link disabled">Disabled</a>
+                    </li>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,126 @@
+<section>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            {{#each breadcrumb}}
+                <li class="breadcrumb-item {{#if @last}}disabled{{/if}}">
+                    {{#if @last}}
+                        {{name}}
+                    {{else}}
+                        <a href="{{url}}">{{name}}</a>
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ol>
+    </nav>
+</section>
+
+<section>
+    <div class="product">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{{productData.img}}" alt="Product Image" class="img-fluid">
+                        <div class="card-body">
+                            <h2>{{productData.info.title}}</h2>
+                            <p>{{productData.info.about}}</p>
+                            <h3>{{productData.info.price}}</h3>
+                                {{#each productData.info.category}}
+                                    {{#if isHot}}
+                                        <span class="badge text-uppercase text-white rounded-pill text-bg-warning ms-1">{{name}}</span>
+                                    {{/if}}
+                                    {{#if isNew}}
+                                        <span class="badge text-bg-primary rounded-pill ms-1">{{name}}</span>
+                                    {{/if}}
+                                    {{#if isBonus}}
+                                        <span class="badge text-bg-info rounded-pill ms-1">{{name}}</span>
+                                    {{/if}}
+                                {{/each}}
+                        </div>
+                </div> 
+            </div>   
+
+            <div class="col-md-5 ms-auto">
+                <div class="table-responsive mb-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                {{#each productData.item.head}}
+                                    <th>{{this}}</th>
+                                {{/each}}
+                            </tr>
+                        </thead>
+                            <tbody>
+                                {{#each productData.item.body}}
+                                    <tr>
+                                        {{#each this}}
+                                            <td>{{this}}</td>
+                                        {{/each}}
+                                    </tr>
+                                {{/each}}
+                            </tbody>
+                    </table>
+                </div>
+
+                <table class="table mt-4 mb-5">
+                    {{#if productData.param.title}}
+                    <h5>{{productData.param.title}}</h5>
+                    {{/if}}
+                    <tbody>
+                        {{#each productData.param.list}}
+                            <tr>
+                                <td>{{this}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                {{#if productData.alert.isError}}
+                    <div class="alert alert-danger pt-2">
+                        {{productData.alert.text}}
+                    </div>
+                {{/if}}
+            </div>    
+        </div>
+    </div>
+
+    <div class="card pt-3 mb-5">
+       <div class="card-body text-start">
+            <ul>
+            {{#each productData.actionList}}
+                <li class="ms-2 btn btn-{{#if isWarning}}warning text-white{{/if}}{{#if isError}}outline-danger{{/if}}{{#if isSuccess}}success{{/if}}{{#if isGood}}outline-primary{{/if}}">{{name}}</li>
+            {{/each}}
+            </ul>
+        </div>
+    </div>    
+</section>
+
+<hr />
+
+<section>
+    <h3 class="text-center">{{goodsOtherBlock.title}}</h3>
+    <div class="goodsOtherBlock.cards">
+        <div class='row g-4 mt-4 mb-4'>
+            {{#each goodsOtherBlock.cards}}
+                <div class='col-md-4'>
+                    <div class="card mb-2">
+                        <img src='{{this.image}}' class="card-img-top">
+                        <div class="card-body">
+                        <h5 class="card-title">{{this.title}}
+                            {{#if isHot}}
+                                <span class="badge text-uppercase text-white text-bg-warning rounded-pill ms-1">Hot!</span>
+                            {{/if}}
+                            {{#if isNew}}
+                                <span class="badge text-bg-primary rounded-pill ms-1">New</span>
+                            {{/if}}
+                        </h5>
+                        <p class="card-text">{{this.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>    
+</section>
+
+<hr />
+
+
