@@ -1,0 +1,23 @@
+<div class='row mt-2'>
+  {{#each newsOtherBlock.cards}}
+    <div class='col-3'>
+      <div class='card text-bg-dark mb-2'>
+        <div class='card-header'>{{this.title}}
+          {{#if isTop}}
+            <span
+              class='badge text-bg-danger rounded-pill ms-1'
+            >Top</span>
+          {{/if}}
+          {{#if isNew}}
+            <span
+              class='badge text-bg-success rounded-pill ms-1'
+            >New</span>
+          {{/if}}
+        </div>
+        <div class='card-body'>
+          <p class='card-text'>{{this.description}}</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
