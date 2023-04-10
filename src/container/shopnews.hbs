@@ -1,0 +1,64 @@
+<section>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            {{#each breadcrumb}}
+                <li class="breadcrumb-item {{#if @last}}disabled{{/if}}">
+                    {{#if @last}}
+                        {{name}}
+                    {{else}}
+                        <a href="{{url}}">{{name}}</a>
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ol>
+    </nav>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <img src="{{newsData.photo}}" alt="Cat photo" class="img-fluid mb-3">
+                <h2>{{newsData.head.heading}}</h2>
+                <p>{{newsData.head.description}}</p>
+                {{#each newsData.body}}
+                            <h5 class="card-title">{{title}}</h5>
+                            <p class="card-text">{{text}}</p>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr />
+
+<section>
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col-md-12 mb-2">
+                <h2 class="text-center">{{newsOtherBlock.title}}</h2>
+                <div class="row mt-5">
+                    {{#each newsOtherBlock.cards}}
+                        <div class='col-3'>
+                            <div class="card text-bg-dark mb-2">
+                                <div class="card-header">{{this.title}}
+                                    {{#if isTop}}
+                                        <span class="badge text-bg-danger rounded-pill ms-1">Top</span>
+                                    {{/if}}
+                                    {{#if isNew}}
+                                        <span class="badge text-bg-success rounded-pill ms-1">New</span>
+                                    {{/if}}
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{this.description}}</p>
+                                </div>
+                            </div>
+                        </div>   
+                    {{/each}}
+                </div>    
+            </div>    
+        </div>
+    </div>
+</section>
+
+<hr />
