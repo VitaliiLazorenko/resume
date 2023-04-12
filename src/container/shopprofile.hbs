@@ -1,0 +1,151 @@
+<div class="ms-3 mt-5">
+<h1 class="mb-3">{{header}}</h1>
+<div class="mb-4">
+<ul class="nav nav-tabs">
+  {{#each purchase.tabs}}
+    <li class="nav-item">
+      <a class="nav-link{{#if @first}} active{{/if}}" href="#">{{this}}</a>
+    </li>
+  {{/each}}
+</ul>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+      <input
+    type='text'
+    class='form-control'
+    placeholder='{{purchase.actionBlock.input.placeholder}}'
+    aria-label='{{purchase.actionBlock.input.placeholder}}'
+ />
+  </div>
+  <div class="col-sm-6">
+     <a
+    class='btn btn-success me-2'
+    href='{{purchase.actionBlock.buttons.0.link}}'
+    role='button'
+    id='button-addon2'
+  >{{purchase.actionBlock.buttons.0.text}}</a>
+  <a
+    class='btn btn-outline-success me-2'
+    href='{{purchase.actionBlock.buttons.1.link}}'
+    role='button'
+    id='button-addon3'
+  >{{purchase.actionBlock.buttons.1.text}}</a>
+  <a
+    class='btn btn-outline-danger'
+    href='{{purchase.actionBlock.buttons.2.link}}'
+    role='button'
+    id='button-addon4'
+  >{{purchase.actionBlock.buttons.2.text}}</a>
+  </div>
+
+</div>
+
+<hr />
+
+<div class="mt-2 mb-5">
+    {{#each purchase.itemList}}
+        <div class="container">
+            <div class="row">
+            <div class="col-md-12 border-bottom">
+                <div class="mb-4">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-md-3 mt-4">
+                          <h5 class="card-title">{{number}}</h5>
+                          <h3 class="card-text">{{status}}</h3>
+                      </div>
+                      <div class="col-md-2 mt-4">
+                          <h5>{{amount.title}}:</h5>
+                          <h3>{{amount.value}}</h3>
+                      </div>
+                      <div class="col-md-5 mt-4">
+                          {{#each images}}
+                            <img src="{{this}}" alt="{{../number}}" class="img-fluid me-2">
+                          {{/each}}
+                      </div>
+                      <div class="col-md-2">
+                          <button class="btn {{#if button.isPrimary}}btn-primary mt-2{{else}}btn-outline-danger{{/if}}">{{button.text}}</button>
+                      </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+<div class="container">
+  <h2 class="mb-4">{{userInfo.title}}</h2>
+  <div class="mt-3 mb-3">
+      <div class="card"> 
+        <div class="card-body ps-5">  
+            <div class="row"> 
+              <h2 class="mb-4">{{userInfo.profileData.title}}</h2>
+              <div class="col-md-4"> 
+                    <h5>{{userInfo.profileData.fullName.surname.title}}:</h5> <h4>{{userInfo.profileData.fullName.surname.value}}</h4><br />
+                    <h5>{{userInfo.profileData.otherInfo.birthday.title}}:</h5> <h4>{{userInfo.profileData.otherInfo.birthday.value}}</h4>
+                    <a href="https://www.youtube.com/" class="btn btn-primary mt-4 mb-2">Редагувати</a>
+              </div> 
+              <div class="col-md-4">         
+                    <h5>{{userInfo.profileData.fullName.name.title}}:</h5> <h4>{{userInfo.profileData.fullName.name.value}}</h4><br />
+                    <h5>{{userInfo.profileData.otherInfo.sex.title}}:</h5> <h4>{{userInfo.profileData.otherInfo.sex.value}}</h4>
+                    <a href="https://www.youtube.com/" class="btn btn-outline-secondary mt-4 mb-2">Очистити</a>
+              </div> 
+              <div class="col-md-4"> 
+                    <h5>{{userInfo.profileData.fullName.middleName.title}}:</h5> <h4>{{userInfo.profileData.fullName.middleName.value}}</h4><br />
+                    <h5>{{userInfo.profileData.otherInfo.language.title}}:</h5> <h4>{{userInfo.profileData.otherInfo.language.value}}</h4>
+                    <a href="https://www.youtube.com/" class="btn btn-outline-danger mt-4 mb-2">Видалити</a>
+              </div> 
+            </div> 
+        </div> 
+      </div> 
+  </div>
+</div>
+
+<div class="container">
+  <div class="mt-3 mb-3">
+      <div class="card"> 
+        <div class="card-body ps-5">  
+            <div class="row"> 
+              <h2 class="mb-4">{{userInfo.recipients.title}}</h2>
+              {{#each userInfo.recipients.users}}
+              <div class="col-md-4"> 
+                    <h5>{{this.name}}:</h5> <h4>{{this.phone}}</h4><br />
+                    <a href="{{this.button.link}}" class="btn btn-primary mb-2">{{this.button.text}}</a>
+              </div> 
+              {{/each}}
+            </div> 
+        </div> 
+      </div> 
+  </div>
+</div> 
+
+<div class="container mb-5">
+    <div class="mt-3 mb-3">
+        <div class="card">
+            <div class="card-body ps-5">
+                <div class="row"> 
+                  <h2>{{userInfo.contacts.title}}</h2>
+                  <div class="col-md-4"> 
+                            <h5>{{userInfo.contacts.contactData.phone.title}}:</h5> <h4>{{userInfo.contacts.contactData.phone.value}}</h4>
+                            <a href="https://www.youtube.com/" class="btn btn-primary mt-4 mb-2">Редагувати</a>
+                      </div> 
+                      <div class="col-md-4">         
+                            <h5>{{userInfo.profileData.fullName.name.title}}:</h5> <h4>{{userInfo.profileData.fullName.name.value}}</h4>
+                            <a href="https://www.youtube.com/" class="btn btn-outline-secondary mt-4 mb-2">Очистити</a>
+                      </div> 
+                      <div class="col-md-4"> 
+                            <h5>{{userInfo.contacts.contactData.email.title}}:</h5> <h4>{{userInfo.contacts.contactData.email.value}}</h4>
+                            <a href="https://www.youtube.com/" class="btn btn-outline-danger mt-4 mb-2">Видалити</a>
+                      </div>
+                  </div>     
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<hr />
