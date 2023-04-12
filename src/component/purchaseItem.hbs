@@ -1,0 +1,32 @@
+<div class="mt-2 mb-5">
+    {{#each purchase.itemList}}
+        <div class="container">
+            <div class="row">
+            <div class="col-md-12 border-bottom">
+                <div class="mb-4">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-md-3 mt-4">
+                          <h5 class="card-title">{{number}}</h5>
+                          <h3 class="card-text">{{status}}</h3>
+                      </div>
+                      <div class="col-md-2 mt-4">
+                          <h5>{{amount.title}}:</h5>
+                          <h3>{{amount.value}}</h3>
+                      </div>
+                      <div class="col-md-5 mt-4">
+                          {{#each images}}
+                            <img src="{{this}}" alt="{{../number}}" class="img-fluid me-2">
+                          {{/each}}
+                      </div>
+                      <div class="col-md-2">
+                          <button class="btn {{#if button.isPrimary}}btn-primary mt-2{{else}}btn-outline-danger{{/if}}">{{button.text}}</button>
+                      </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
