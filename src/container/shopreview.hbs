@@ -1,0 +1,183 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-8'>
+
+      <div class="container">
+        <div class='formBlock mt-4 ms-2'>
+          <h2>{{formBlock.header}}</h2>
+          <div class='rating mt-4'>
+            <h6>{{formBlock.rating.title}}:
+              {{formBlock.rating.value}}</h6>
+          </div>
+        </div>
+      </div>   
+
+    <div class="container">  
+      <div class="mt-5 mb-5">
+          <div class="mb-4">
+            <ul class="nav nav-tabs">
+              {{#each formBlock.actionBlock.tabs}}
+                <li class="nav-item">
+                  <a class="nav-link{{#if @last}} active{{/if}}" href="#">{{text}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </div>  
+      </div>
+    </div>  
+
+<hr />      
+       
+    <div class="container"> 
+      <div class="card mt-5 mb-5">
+          <div class="card-body">
+              <p>
+                {{formBlock.actionBlock.report.title}}
+              </p> 
+              <a
+                class='btn btn-secondary'
+                href='{{formBlock.actionBlock.report.button.link}}'
+                role='button'
+                id='button-addon'
+              >{{formBlock.actionBlock.report.button.text}}</a> 
+          </div>   
+      </div>
+    </div>  
+
+<hr />  
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12 mb-4'>
+      <div class='feedbackBlock'>
+        <h2>{{formBlock.feedbackBlock.title}}</h2>
+        <div class='btn mt-4'>
+          {{#each formBlock.feedbackBlock.buttons}}
+            <a href='{{this.link}}' class='btn btn-{{#if isWarning}}warning me-3 text-white{{/if}}{{#if isSuccess}}success me-3{{/if}}{{#if isDanger}}danger{{/if}}'>{{this.text}}</a>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class='col-md-4'>
+
+         <div class="card mt-4">
+              <div class="card-body">
+                  <img src='{{formBlock.goodsInfo.photo}}' alt='{{formBlock.goodsInfo.name}}' />
+                  <h3 class="mt-4">{{formBlock.goodsInfo.name}}</h3>
+              </div>  
+         </div>     
+         <div class="card mt-4">
+              <div class="card-body">
+                    <h3>{{formBlock.goodsInfo.price}}</h3>
+                      {{#if formBlock.goodsInfo.inMarket}}
+                        <p class='text-success'>В наявності</p>
+                      {{else}}
+                        <p class='text-danger'>Немає в наявності</p>
+                      {{/if}}
+                      <div class='btn'>
+                        {{#each formBlock.goodsInfo.buttons}}
+                          <a href='{{this.link}}' class='btn btn-{{#if isPrimary}}primary{{/if}}{{#if isSecondary}}secondary ms-3{{/if}}'>{{this.text}}</a>
+                        {{/each}}
+                      </div>
+              </div>  
+         </div> 
+         <div class="card mt-4">
+              <div class="card-body">
+                  <p class="mt-2">{{formBlock.goodsInfo.seller.title}}: {{formBlock.goodsInfo.seller.value}}</p>
+              </div>  
+         </div>  
+
+    </div>
+  </div>
+</div>
+
+<hr />  
+
+<div class='container ms-2 mt-5 pe-4'>
+
+{{#each reviewList}}
+    <div class="card mb-4">
+      <div class="card-header">
+        <h6>{{title.userName}}</h6>
+        <p>{{title.caption}}</p>
+        <p>{{title.date}}</p>
+      </div>
+      <div class="card-body">
+        <p class="card-title">{{reviewBody.seller.title}}: {{reviewBody.seller.value}}</p>
+        <p class="card-title">{{reviewBody.rating.title}}: {{reviewBody.rating.value}}</p>
+        <p class="card-text">{{#each reviewBody.text}}{{this}}<br>{{/each}}</p>
+        <p class="card-text"><strong>{{reviewBody.advantages.title}}:</strong> {{reviewBody.advantages.text}}</p>
+        <p class="card-text"><strong>{{reviewBody.disadvantages.title}}:</strong> {{reviewBody.disadvantages.text}}</p>
+          <div class="row">
+            {{#each reviewBody.images}}
+              <div class="col-sm-1">
+                <img src="{{this}}" alt="review image" class="img-fluid">
+              </div>
+            {{/each}}
+          </div>
+      </div>
+
+    </div>
+  {{/each}}
+
+</div>
+
+<div class="container">
+  {{#each reviewList}}
+    {{#each this.reviewBody.coments}}
+      <div class="card mb-4 ms-5 wight=700">
+        <div class="card-body">
+              <h5 class="mb-1">{{userName}}</h5>
+              <p class="mb-1">{{date}}</p>
+              <p class="mb-1">{{text}}</p>
+        </div>
+      </div>  
+    {{/each}}
+  {{/each}}    
+</div>
+
+<div class="container">
+  {{#each reviewList}}
+    {{#each this.reviewBody.comments}}
+      {{#if @index '<' 3}}
+        {{#if @../index '==' 0}}
+          <div class="card mb-4 ms-5 wight=700">
+            <div class="card-body">
+                  <h5 class="mb-1">{{userName}}</h5>
+                  <p class="mb-1">{{date}}</p>
+                  <p class="mb-1">{{text}}</p>
+            </div>
+          </div>
+          {{else if @../index '==' 1}}
+          <div class="card mb-4 ms-5 wight=700">
+            <div class="card-body">
+                  <h5 class="mb-1">{{userName}}</h5>
+                  <p class="mb-1">{{date}}</p>
+                  <p class="mb-1">{{text}}</p>
+            </div>
+          </div>
+          {{else if @../index '==' 2}}
+          <div class="card mb-4 ms-5 wight=700">
+            <div class="card-body">
+                  <h5 class="mb-1">{{userName}}</h5>
+                  <p class="mb-1">{{date}}</p>
+                  <p class="mb-1">{{text}}</p>
+            </div>
+          </div>
+        {{/if}}
+      {{else if @index '<' 1}}
+        <div class="card mb-4 ms-5 wight=700">
+          <div class="card-body">
+                <h5 class="mb-1">{{userName}}</h5>
+                <p class="mb-1">{{date}}</p>
+                <p class="mb-1">{{text}}</p>
+          </div>
+        </div>
+      {{/if}}
+    {{/each}}
+  {{/each}}    
+</div>
