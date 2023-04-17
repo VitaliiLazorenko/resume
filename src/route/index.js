@@ -2517,7 +2517,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Library',
-         
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -2535,7 +2535,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Settings',
-     
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -2553,7 +2553,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Gaming',
-      
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -2571,7 +2571,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Learning',
-      
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -2589,7 +2589,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'About',
-    
+          link: 'https://www.youtube.com/live',
         },
       ],
     ],
@@ -2767,7 +2767,7 @@ router.get('/shopcart', function (req, res) {
         },
         {
           text: 'Library',
-
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -2785,7 +2785,7 @@ router.get('/shopcart', function (req, res) {
         },
         {
           text: 'Settings',
-
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -2803,7 +2803,7 @@ router.get('/shopcart', function (req, res) {
         },
         {
           text: 'Gaming',
-
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -2821,7 +2821,7 @@ router.get('/shopcart', function (req, res) {
         },
         {
           text: 'Learning',
-
+          link: 'https://www.youtube.com/live',   
         },
       ],
       [
@@ -2839,7 +2839,7 @@ router.get('/shopcart', function (req, res) {
         },
         {
           text: 'About',
-
+          link: 'https://www.youtube.com/live',
         },
       ],
     ],
@@ -3138,7 +3138,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Library',
-  
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -3156,7 +3156,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Settings',
-    
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -3174,7 +3174,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Gaming',
-
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -3192,7 +3192,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Learning',
-   
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -3210,7 +3210,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'About',
-      
+          link: 'https://www.youtube.com/live',
         },
       ],
     ],
@@ -3438,7 +3438,7 @@ router.get('/shopprofile', function (req, res) {
         },
         {
           text: 'Library',
- 
+          link: 'https://www.youtube.com/live',   
         },
       ],
       [
@@ -3456,7 +3456,7 @@ router.get('/shopprofile', function (req, res) {
         },
         {
           text: 'Settings',
-   
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -3474,7 +3474,7 @@ router.get('/shopprofile', function (req, res) {
         },
         {
           text: 'Gaming',
-      
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -3492,7 +3492,7 @@ router.get('/shopprofile', function (req, res) {
         },
         {
           text: 'Learning',
-  
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -3510,7 +3510,7 @@ router.get('/shopprofile', function (req, res) {
         },
         {
           text: 'About',
-  
+          link: 'https://www.youtube.com/live',
         },
       ],
     ],
@@ -3726,7 +3726,7 @@ router.get('/shopreview', function (req, res) {
         },
         {
           text: 'Library',
-        
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -3744,7 +3744,7 @@ router.get('/shopreview', function (req, res) {
         },
         {
           text: 'Settings',
-  
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -3762,7 +3762,7 @@ router.get('/shopreview', function (req, res) {
         },
         {
           text: 'Gaming',
-      
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -3780,7 +3780,7 @@ router.get('/shopreview', function (req, res) {
         },
         {
           text: 'Learning',
-      
+          link: 'https://www.youtube.com/live',
         },
       ],
       [
@@ -3798,7 +3798,7 @@ router.get('/shopreview', function (req, res) {
         },
         {
           text: 'About',
-
+          link: 'https://www.youtube.com/live',
         },
       ],
     ],
