@@ -8,7 +8,7 @@
               <li class='nav-item'>
                 {{#if this.link}}
                   <a
-                    class='nav-link'
+                    class='nav-link {{#if @last}}disabled{{/if}}'
                     href='{{this.link}}'
                   >{{this.text}}</a>
                 {{else}}
