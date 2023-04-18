@@ -97,91 +97,56 @@
 
 <hr />  
 
-<div class='container ms-2 mt-5 pe-4'>
-
-{{#each reviewList}}
-    <div class="card mb-4">
-      <div class="card-header">
-        <h6>{{title.userName}}</h6>
-        <p>{{title.caption}}</p>
-        <p>{{title.date}}</p>
-      </div>
-      <div class="card-body">
-        <p class="card-title">{{reviewBody.seller.title}}: {{reviewBody.seller.value}}</p>
-        <p class="card-title">{{reviewBody.rating.title}}: {{reviewBody.rating.value}}</p>
-        <p class="card-text">{{#each reviewBody.text}}{{this}}<br>{{/each}}</p>
-        <p class="card-text"><strong>{{reviewBody.advantages.title}}:</strong> {{reviewBody.advantages.text}}</p>
-        <p class="card-text"><strong>{{reviewBody.disadvantages.title}}:</strong> {{reviewBody.disadvantages.text}}</p>
-          <div class="row">
-            {{#each reviewBody.images}}
-              <div class="col-sm-1">
-                <img src="{{this}}" alt="review image" class="img-fluid">
-              </div>
-            {{/each}}
-          </div>
-      </div>
-
-    </div>
-  {{/each}}
-
-</div>
-
-{{!-- <div class="container">
-  {{#each reviewList}}
-    {{#each this.reviewBody.coments}}
-      <div class="card mb-4 ms-5 wight=700">
-        <div class="card-body">
-              <h5 class="mb-1">{{userName}}</h5>
-              <p class="mb-1">{{date}}</p>
-              <p class="mb-1">{{text}}</p>
-        </div>
-      </div>  
-    {{/each}}
-  {{/each}}    
-</div>
-
-<div class="container">
-  {{#each reviewList}}
-    {{#each this.reviewBody.comments}}
-      {{#if @index '<' 3}}
-        {{#if @../index '==' 0}}
-          <div class="card mb-4 ms-5 wight=700">
-            <div class="card-body">
-                  <h5 class="mb-1">{{userName}}</h5>
-                  <p class="mb-1">{{date}}</p>
-                  <p class="mb-1">{{text}}</p>
-            </div>
-          </div>
-          {{else if @../index '==' 1}}
-          <div class="card mb-4 ms-5 wight=700">
-            <div class="card-body">
-                  <h5 class="mb-1">{{userName}}</h5>
-                  <p class="mb-1">{{date}}</p>
-                  <p class="mb-1">{{text}}</p>
-            </div>
-          </div>
-          {{else if @../index '==' 2}}
-          <div class="card mb-4 ms-5 wight=700">
-            <div class="card-body">
-                  <h5 class="mb-1">{{userName}}</h5>
-                  <p class="mb-1">{{date}}</p>
-                  <p class="mb-1">{{text}}</p>
-            </div>
-          </div>
-        {{/if}}
-      {{else if @index '<' 1}}
-        <div class="card mb-4 ms-5 wight=700">
+<div class="container ms-2 mt-4 pe-4">
+  <div class="row">
+    {{#each reviewList}}
+      <div class="col-md-12 mt-3 mb-4">
+        <div class="card">
           <div class="card-body">
-                <h5 class="mb-1">{{userName}}</h5>
-                <p class="mb-1">{{date}}</p>
-                <p class="mb-1">{{text}}</p>
+            <div class="card">
+              <div class="card-body">
+                <h5>{{title.userName}}</h5>
+                <p>{{title.caption}}</p>
+                <p>{{title.date}}</p>
+                  <hr />
+                <h5 class="card-title">{{title.caption}}</h5>
+                <p class="card-text">{{reviewBody.text.[0]}}</p>
+                  <div class="row mt-3">
+                    <div class="col-md-12">
+                      <p class="card-title"><strong>{{reviewBody.seller.title}}</strong>: {{reviewBody.seller.value}}</p>
+                      <p class="card-title"><strong>{{reviewBody.rating.title}}</strong>: {{reviewBody.rating.value}}</p>
+                      <p class="card-text">{{#each reviewBody.text}}{{this}}<br>{{/each}}</p>
+                      <p class="card-text"><strong>{{reviewBody.advantages.title}}:</strong> {{reviewBody.advantages.text}}</p>
+                      <p class="card-text"><strong>{{reviewBody.disadvantages.title}}:</strong> {{reviewBody.disadvantages.text}}</p>
+                        {{#if reviewBody.images}}
+                          <div class="row">
+                            {{#each reviewBody.images}}
+                              <div class="col-sm-1">
+                                <img src="{{this}}" alt="review image" class="img-fluid">
+                              </div>
+                            {{/each}}
+                          </div> 
+                        {{/if}}
+                  </div>
+            </div>
           </div>
         </div>
-      {{/if}}
+          {{#if reviewBody.coments}}
+            <div class="mt-3 ms-5">
+              {{#each reviewBody.coments}}
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-subtitle mb-2 text-muted">{{this.userName}}</h5>
+                  <p class="card-text">{{this.date}}</p>
+                  <p class="card-text">{{this.text}}</p>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+          {{/if}}
+          </div>
+        </div>
+      </div>
     {{/each}}
-  {{/each}}    
-</div> --}}
-
-<div class='container ms-2 mt-5 pe-4'>
-
+  </div>
 </div>
