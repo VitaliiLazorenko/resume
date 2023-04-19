@@ -97,4 +97,16 @@
 
 <hr />  
 
-{{> reviewItem }}
+<div class='container ms-2 mt-4 pe-4'>
+  <div class='row'>
+    {{#each reviewList}}
+      <div class='col-md-12 mt-3 mb-4'>
+        <div class='card'>
+          <div class='card-body'>
+            {{> reviewItem }}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
